@@ -36,7 +36,8 @@
                 <!--begin::Wrapper-->
                 <div class="w-lg-500px p-10">
                     <!--begin::Form-->
-                    <form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="../../demo1/dist/authentication/layouts/corporate/sign-in.html" action="#">
+                    <form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" action="{{ route('register') }}"  method="POST">
+                        @csrf
                         <!--begin::Heading-->
                         <div class="text-center mb-11">
                             <!--begin::Title-->
@@ -74,6 +75,14 @@
                         </div>
                         <!--end::Separator-->
                         <!--begin::Input group=-->
+                        <div class="fv-row mb-8 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
+                            <!--begin::Email-->
+                            <input type="text" placeholder="Name" name="name" autoconplete="off" class="form-control bg-transparent">
+                            <!--end::Email-->
+                            <div class="fv-plugins-message-container invalid-feedback">
+
+                            </div>
+                        </div>
                         <div class="fv-row mb-8 fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
                             <!--begin::Email-->
                             <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent">
@@ -125,7 +134,7 @@
                         <!--end::Accept-->
                         <!--begin::Submit button-->
                         <div class="d-grid mb-10">
-                            <button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary">
                                 <!--begin::Indicator label-->
                                 <span class="indicator-label">Sign up</span>
                                 <!--end::Indicator label-->
